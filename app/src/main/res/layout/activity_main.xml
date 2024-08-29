@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Warning:Use .png/.jpg/.svg etc link format"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:background="#FFEB3B"
+        android:layout_margin="@dimen/_4sdp"
+        />
+    <!--  Picasso Implementation  -->
+    <androidx.appcompat.widget.AppCompatEditText
+        app:layout_constraintTop_toBottomOf="@+id/warning"
+        android:id="@+id/picassoLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="#FFC107"
+        android:hint="Enter Link"
+        android:maxLines="1"
+        android:padding="@dimen/_7sdp"
+        app:layout_constraintBottom_toTopOf="@+id/picassoImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ImageView
+        android:id="@+id/picassoImg"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_140sdp"
+        android:src="#DDE1DD"
+        app:layout_constraintBottom_toTopOf="@+id/loadPicasso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/picassoLink"
+        android:layout_margin="@dimen/_10sdp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loadPicasso"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_50sdp"
+        android:background="#CDDC39"
+        android:padding="@dimen/_15sdp"
+        android:text="Load Picasso"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/glideLink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/picassoImg" />
+    <!--  Glide Implementation  -->
+    <TextView
+        android:id="@+id/glideLink"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_width="@dimen/_1sdp"
+        app:layout_constraintBottom_toTopOf="@+id/glideImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loadPicasso"
+        android:layout_margin="@dimen/_6sdp"
+        />
+    <ImageView
+        android:id="@+id/glideImg"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_140sdp"
+        android:src="#DDE1DD"
+        app:layout_constraintBottom_toTopOf="@+id/loadGlide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/glideLink"
+        android:layout_weight="1"
+        android:minWidth="@dimen/_100sdp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loadGlide"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_50sdp"
+        android:background="#CDDC39"
+        android:padding="@dimen/_15sdp"
+        android:text="Load Meme"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/glideImg"
+        android:layout_margin="@dimen/_10sdp"
+        />
+</LinearLayout>
